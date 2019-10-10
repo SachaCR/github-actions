@@ -1,0 +1,58 @@
+{
+  "name": "github-actions",
+  "version": "1.0.0",
+  "description": "Test of github actions",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "lint": "eslint *.ts",
+    "watch": "jest --watchAll",
+    "preversion": "npm test",
+    "version": "npm run build",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SachaCR/github-actions.git"
+  },
+  "keywords": [
+    "actions",
+    "github"
+  ],
+  "author": "SachaCR",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SachaCR/github-actions/issues"
+  },
+  "homepage": "https://github.com/SachaCR/github-actions#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.17",
+    "@types/node": "^12.7.1",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "eslint": "^6.2.1",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "collectCoverage": true,
+    "coverageReporters": [
+      "lcov",
+      "text-summary"
+    ],
+    "verbose": false
+  }
+}
